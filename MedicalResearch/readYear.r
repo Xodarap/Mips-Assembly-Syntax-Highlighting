@@ -1,4 +1,22 @@
 benefit <- function() {
+	# Payoff off .7 QALE 
+	netPayoff <- calcPayoff(.7)
+
+	# So far we've calc'd it for people not yet 18. But what about us old folks?
+	# A low estimate: just include the people who were 18 in 2005
+	# netPayoff <- netPayoff + sorted[5,2] * .7
+
+	# High estimate:
+	# Let's assume that the increase in QALE happens for everyone equally. This will overestimate the
+	# benefit of research, since older people benefit less than 18y/os
+	myData <- read.table("p2001_10.a", fill = TRUE, row.names = NULL, header=FALSE)
+	over18in2005 <- myData[(myData[,3] > 18) & (myData[,2] == 2005),]
+	totalOver18 <- sum(over18in2005[,4])
+	netPayoff <- netPayoff + .7 * totalOver18
+	return(netPayoff)
+}
+
+calcPayoff <- function(rawPayoffPerPerson) {
 	files = c("p2001_10.a", "p2021_30.a", "p2041_50.a", "p2061_70.a", "p2081_90.a", "p2011_20.a", "p2031_40.a", "p2051_60.a", "p2071_80.a", "p2091_00.a")
 	maxYears = length(files) * 10 - 5
 	eighteens = matrix(nrow = maxYears, ncol = 2)
@@ -14,24 +32,11 @@ benefit <- function() {
 	}
 	sorted <- eighteens[order(eighteens[,1]),]
 
-	# Original payoff was .7 QALE; discount rate of 3% / year
-	payoffPerYear <- .7 * .97^(sorted[,1] - 2006)
+	# discount rate of 3% / year
+	payoffPerYear <- rawPayoffPerPerson * .97^(sorted[,1] - 2006)
 
 	# Net payoff is number of people * payoff rate	
 	netPayoff <- sorted[,2] %*% payoffPerYear
-
-	# So far we've calc'd it for people not yet 18. But what about us old folks?
-	# A low estimate: just include the people who were 18 in 2005
-	# netPayoff <- netPayoff + sorted[5,2] * .7
-
-	# High estimate:
-	# Let's assume that the increase in QALE happens for everyone equally. This will overestimate the
-	# benefit of research, since older people benefit less than 18y/os
-	myData <- read.table("p2001_10.a", fill = TRUE, row.names = NULL, header=FALSE)
-	over18in2005 <- myData[(myData[,3] > 18) & (myData[,2] == 2005),]
-	totalOver18 <- sum(over18in2005[,4])
-	netPayoff <- netPayoff + .7 * totalOver18
-	return(netPayoff)
 }
 
 cost <- function() {
@@ -53,9 +58,19 @@ cost <- function() {
 	return(data.frame(year = funding$year, funding = funding2010dollars))
 }
 
+productionCost <- function() {
+	perPerson <- 4000
+	pop <- read.table("p2001_10.a", fill = TRUE, row.names = NULL, header=FALSE)
+	# The special row with "year" 2005999 contains the total population in 2005
+	popIn2005 <- pop[pop[,2] == 2005999, 3]
+	futureCost <- calcPayoff(perPerson)	
+	return(perPerson * popIn2005 + futureCost)
+}
+
 estimates <- function() {
 	benefit <- benefit()
 	cost <- cost()
+	proc <- productionCost()
 
 	decadeBefore <- sum(cost[cost[,1] > 1984 & cost[,1] < 1995,2]) 
 	twoDecBefore <- sum(cost[cost[,1] > 1974 & cost[,1] < 1995,2]) 
@@ -63,8 +78,10 @@ estimates <- function() {
 	twoDecInclPriv <- twoDecBefore * 3
 	allNIH <- sum(cost[cost[,1] < 2006,2])
 	all <- allNIH * 3
-	labels = c("1985-1994, only public", "1975-1994, only public", "1985-1994, public & private", "1975-1994, public & private", "1938-2005, only public", "1938-2005, public & private")
-	vals = c(decadeBefore, twoDecBefore, oneDecInclPriv, twoDecInclPriv, allNIH, all)
+	oneDecPrivProd <- oneDecInclPriv + proc
+	allAndProc <- all + proc
+	labels = c("1985-1994, only public", "1975-1994, only public", "1985-1994, public & private", "1975-1994, public & private", "1938-2005, only public", "1938-2005, public & private", "1985-1994, pub, priv & proc", "1938-1994, pub, priv & proc")
+	vals = c(decadeBefore, twoDecBefore, oneDecInclPriv, twoDecInclPriv, allNIH, all, oneDecPrivProd, allAndProc)
 	icer = vals / benefit
 	return(data.frame(labels = labels, cost = vals, icer = icer))
 }
