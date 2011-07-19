@@ -105,10 +105,3 @@ rawReturn <- function(baseYear) {
 	}
 	sorted <- people[order(people[,1]),]
 }
-
-nonResearchSpending <- function() {
-	perPerson = data.frame(years=c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009),
-								spending = c(4362, 4599, 4878 ,5240 ,5682 ,6098 ,6458 ,6827 ,7198 ,7561 ,7845 ,8086))
-
-
-}
