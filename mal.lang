@@ -128,6 +128,7 @@
 			<keyword>sw</keyword>
 			<keyword>sb</keyword>
 			<keyword>add(\.s)?</keyword>
+			<keyword>addi(\.s)?</keyword>
 			<keyword>sub(\.s)?</keyword>
 			<keyword>mul(\.s)?</keyword>
 			<keyword>div(\.s)?</keyword>
