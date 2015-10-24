@@ -1,3 +1,5 @@
 This file adds syntax highlighting for any editor which allows gtksourceview (e.g. gedit).
 
-You will need to move it to the appropriate folder, probably /usr/share/gtksourceview-2.0/language-specs
+You will need to move it to the appropriate folder.
+For linux, probably /usr/share/gtksourceview-2.0/language-specs
+For windows, probably Program Files (x86)/gedit/share/gtksourceview-2.0/language-specs
