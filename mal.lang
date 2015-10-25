@@ -152,6 +152,10 @@
 			<keyword>mfc1</keyword>
 			<keyword>mtc1</keyword>
 			<keyword>b</keyword>
+			<keyword>slt</keyword>
+			<keyword>sltu</keyword>
+			<keyword>slti</keyword>
+			<keyword>sltiu</keyword>
 			<keyword>beq</keyword>
 			<keyword>bne</keyword>
 			<keyword>blt</keyword>
