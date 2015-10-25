@@ -176,6 +176,7 @@
 			<keyword>putc</keyword>
 			<keyword>puts</keyword>
 			<keyword>done</keyword>
+			<keyword>syscall</keyword>
                 </context>                               
                 
                 <context id="types" style-ref="type">
