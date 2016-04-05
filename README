@@ -3,3 +3,7 @@ This file adds syntax highlighting for any editor which allows gtksourceview (e.
 You will need to move it to the appropriate folder.
 For linux, probably /usr/share/gtksourceview-2.0/language-specs
 For windows, probably Program Files (x86)/gedit/share/gtksourceview-2.0/language-specs
+
+If you have version 3.0 of gtksourceview, then the folders are:
+For linux, probably /usr/share/gtksourceview-3.0/language-specs
+For windows, probably Program Files (x86)/gedit/share/gtksourceview-3.0/language-specs

@@ -123,39 +123,98 @@
 			<keyword>la</keyword>
 			<keyword>li</keyword>
 			<keyword>lw</keyword>
+			<keyword>lwcl</keyword>
+			<keyword>lwl</keyword>
+			<keyword>lwr</keyword>
 			<keyword>lb</keyword>
 			<keyword>lbu</keyword>
+			<keyword>lui</keyword>
+			<keyword>lh</keyword>
+			<keyword>lhu</keyword>
+			<keyword>ld</keyword>
+			<keyword>ulh</keyword>
+			<keyword>ulhu</keyword>
+			<keyword>ulw</keyword>
+			<keyword>ll</keyword>
 			<keyword>sw</keyword>
+			<keyword>swl</keyword>
+			<keyword>swr</keyword>
+			<keyword>swcl</keyword>
+			<keyword>sd</keyword>
+			<keyword>sdcl</keyword>
 			<keyword>sb</keyword>
+			<keyword>sh</keyword>
+			<keyword>ush</keyword>
+			<keyword>usw</keyword>
+			<keyword>sc</keyword>
+			<keyword>abs</keyword>
 			<keyword>add(\.s)?</keyword>
+			<keyword>addu</keyword>
 			<keyword>addi(\.s)?</keyword>
+			<keyword>addiu</keyword>
 			<keyword>sub(\.s)?</keyword>
+			<keyword>mult</keyword>
+			<keyword>multu</keyword>
 			<keyword>mul(\.s)?</keyword>
+			<keyword>mulo</keyword>
+			<keyword>mulou</keyword>
+			<keyword>madd</keyword>
+			<keyword>maddu</keyword>
+			<keyword>msub</keyword>
+			<keyword>neg</keyword>
+			<keyword>negu</keyword>
+			<keyword>beq</keyword>
 			<keyword>div(\.s)?</keyword>
+			<keyword>divu</keyword>
 			<keyword>rem</keyword>
+			<keyword>remu</keyword>
 			<keyword>and</keyword>
+			<keyword>andi</keyword>
 			<keyword>or</keyword>
+			<keyword>ori</keyword>
 			<keyword>xor</keyword>
 			<keyword>nor</keyword>
 			<keyword>not</keyword>
 			<keyword>move</keyword>
 			<keyword>sll</keyword>
+			<keyword>sllv</keyword>
 			<keyword>srl</keyword>
+			<keyword>srlv</keyword>
 			<keyword>sra</keyword>
+			<keyword>srav</keyword>
+			<keyword>rol</keyword>
+			<keyword>ror</keyword>
 			<keyword>l\.s</keyword>
 			<keyword>s\.s</keyword>
 			<keyword>mov\.s</keyword>
 			<keyword>cvt\.s\.w</keyword>
 			<keyword>cvt\.w\.s</keyword>
+			<keyword>mfhi</keyword>
+			<keyword>mflo</keyword>
+			<keyword>mthi</keyword>
+			<keyword>mtlo</keyword>
 			<keyword>mfc0</keyword>
 			<keyword>mtc0</keyword>
 			<keyword>mfc1</keyword>
 			<keyword>mtc1</keyword>
 			<keyword>b</keyword>
+			<keyword>bclf</keyword>
+			<keyword>bclt</keyword>
 			<keyword>slt</keyword>
 			<keyword>sltu</keyword>
 			<keyword>slti</keyword>
 			<keyword>sltiu</keyword>
+			<keyword>seq</keyword>
+			<keyword>sge</keyword>
+			<keyword>sgeu</keyword>
+			<keyword>sgt</keyword>
+			<keyword>sgtu</keyword>
+			<keyword>sle</keyword>
+			<keyword>sleu</keyword>
+			<keyword>sne</keyword>
+			<keyword>b</keyword>
+			<keyword>bclf</keyword>
+			<keyword>bclt</keyword>
 			<keyword>beq</keyword>
 			<keyword>bne</keyword>
 			<keyword>blt</keyword>
