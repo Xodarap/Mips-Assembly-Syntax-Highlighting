@@ -151,7 +151,6 @@
 			<keyword>abs(\.[sd])?</keyword>
 			<keyword>add(\.[sd])?</keyword>
 			<keyword>addu</keyword>
-			<keyword>addi\.s</keyword>
 			<keyword>addiu</keyword>
 			<keyword>sub(\.[sd])?</keyword>
 			<keyword>mult</keyword>
