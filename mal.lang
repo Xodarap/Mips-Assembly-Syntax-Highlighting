@@ -148,24 +148,24 @@
 			<keyword>ush</keyword>
 			<keyword>usw</keyword>
 			<keyword>sc</keyword>
-			<keyword>abs</keyword>
-			<keyword>add(\.s)?</keyword>
+			<keyword>abs(\.[sd])?</keyword>
+			<keyword>add(\.[sd])?</keyword>
 			<keyword>addu</keyword>
-			<keyword>addi(\.s)?</keyword>
+			<keyword>addi\.s</keyword>
 			<keyword>addiu</keyword>
-			<keyword>sub(\.s)?</keyword>
+			<keyword>sub(\.[sd])?</keyword>
 			<keyword>mult</keyword>
 			<keyword>multu</keyword>
-			<keyword>mul(\.s)?</keyword>
+			<keyword>mul\.[sd]</keyword>
 			<keyword>mulo</keyword>
 			<keyword>mulou</keyword>
 			<keyword>madd</keyword>
 			<keyword>maddu</keyword>
 			<keyword>msub</keyword>
-			<keyword>neg</keyword>
+			<keyword>neg(\.[sd])?</keyword>
 			<keyword>negu</keyword>
 			<keyword>beq</keyword>
-			<keyword>div(\.s)?</keyword>
+			<keyword>div(\.[sd])?</keyword>
 			<keyword>divu</keyword>
 			<keyword>rem</keyword>
 			<keyword>remu</keyword>
@@ -185,11 +185,15 @@
 			<keyword>srav</keyword>
 			<keyword>rol</keyword>
 			<keyword>ror</keyword>
-			<keyword>l\.s</keyword>
-			<keyword>s\.s</keyword>
-			<keyword>mov\.s</keyword>
-			<keyword>cvt\.s\.w</keyword>
-			<keyword>cvt\.w\.s</keyword>
+			<keyword>l\.[sd]</keyword>
+			<keyword>s\.[sd]</keyword>
+			<keyword>mov\.[sd]</keyword>
+			<keyword>c\.eq\.[sd]</keyword>
+			<keyword>c\.le\.[sd]</keyword>
+			<keyword>c\.lt\.[sd]</keyword>
+			<keyword>cvt\.s\.[wd]</keyword>
+			<keyword>cvt\.w\.[sd]</keyword>
+			<keyword>cvt\.d\.[sw]</keyword>
 			<keyword>mfhi</keyword>
 			<keyword>mflo</keyword>
 			<keyword>mthi</keyword>
