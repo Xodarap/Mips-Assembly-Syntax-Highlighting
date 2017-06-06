@@ -151,8 +151,10 @@
 			<keyword>abs(\.[sd])?</keyword>
 			<keyword>add(\.[sd])?</keyword>
 			<keyword>addu</keyword>
+			<keyword>addi</keyword>
 			<keyword>addiu</keyword>
 			<keyword>sub(\.[sd])?</keyword>
+			<keyword>subu</keyword>
 			<keyword>mult</keyword>
 			<keyword>multu</keyword>
 			<keyword>mul\.[sd]</keyword>
@@ -202,8 +204,6 @@
 			<keyword>mfc1</keyword>
 			<keyword>mtc1</keyword>
 			<keyword>b</keyword>
-			<keyword>bclf</keyword>
-			<keyword>bclt</keyword>
 			<keyword>slt</keyword>
 			<keyword>sltu</keyword>
 			<keyword>slti</keyword>
@@ -217,8 +217,8 @@
 			<keyword>sleu</keyword>
 			<keyword>sne</keyword>
 			<keyword>b</keyword>
-			<keyword>bclf</keyword>
-			<keyword>bclt</keyword>
+			<keyword>bc1f</keyword>
+			<keyword>bc1t</keyword>
 			<keyword>beq</keyword>
 			<keyword>bne</keyword>
 			<keyword>blt</keyword>
